@@ -23,9 +23,9 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if(string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrWhiteSpace(usuario.Nombre)) 
+            if (string.IsNullOrEmpty(usuario.Nombre) || string.IsNullOrWhiteSpace(usuario.Nombre))
             {
-                Mensaje = "El nombre del usuario no puede ser vacio";           
+                Mensaje = "El nombre del usuario no puede ser vacio";
             }
 
             if (string.IsNullOrEmpty(usuario.Apellido) || string.IsNullOrWhiteSpace(usuario.Apellido))
@@ -101,5 +101,46 @@ namespace CapaNegocio
             return objCapaDato.eliminarUsuario(id, out Mensaje);
         }
 
+
+
+        public bool cambiarClaveint(int idUsuario, string nuevaClave, out string mensaje)
+        {
+            return objCapaDato.cambiarClave(idUsuario, nuevaClave, out mensaje);
+        }
+
+
+        public bool reestablecerClave(int idUsuario, string correo, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+            string nuevaClave = CN_Recursos.generarClave();
+            string clave = CN_Recursos.ConvertirSha256(nuevaClave);
+
+            bool resultado = objCapaDato.reestablecerClave(idUsuario, clave, out Mensaje);
+
+            if (resultado)
+            {
+                string asunto = "Contraseña reestablecida";
+                string mensaje_correo = "<h3>Su contraseña fue reestablecida correctamente</h3><br/><p>Su contraseña para acceder ahora es: !clave!</p>";
+                mensaje_correo = mensaje_correo.Replace("!clave!", clave);
+
+                bool respuesta = CN_Recursos.enviarCorreo(correo, asunto, mensaje_correo);
+
+                if (respuesta)
+                {
+                    return true;
+                }
+                else
+                {
+                    Mensaje = "No se pudo enviar el correo.";
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }

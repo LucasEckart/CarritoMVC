@@ -160,6 +160,60 @@ namespace CapaDatos
         }
 
 
+        public bool cambiarClave (int idUsuario, string nuevaClave, out string mensaje)
+        {
+            bool resultado = false;
+            mensaje = string.Empty;
+            Conexion datos = new Conexion();
+
+            try
+            {
+                datos.setearConsulta("update usuario set clave = @nuevaClave, Reestablecer = 0 where IdUsuario = @id");
+                datos.setearParametro("@id", idUsuario);
+                datos.setearParametro("@nuevaClave", nuevaClave);
+                resultado = datos.ejecutarAccion() > 0 ? true : false;
+            
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                mensaje = ex.Message;
+            }
+            finally 
+            { 
+                datos.cerrarConexion();
+            }
+
+            return resultado;
+
+        }
+
+        public bool reestablecerClave(int idUsuario, string clave, out string Mensaje)
+        {
+            bool resultado = false;
+            Mensaje = string.Empty;
+            Conexion datos = new Conexion();
+
+            try
+            {
+                datos.setearConsulta("update usuario set clave = @clave, Reestablecer = 1 where IdUsuario = @id");
+                datos.setearParametro("@id", idUsuario);
+                datos.setearParametro("@clave", clave); 
+                resultado = datos.ejecutarAccion() > 0 ? true : false;
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                Mensaje = ex.Message;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            return resultado;
+        }
+
+
 
 
 
