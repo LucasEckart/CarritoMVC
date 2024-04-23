@@ -1,0 +1,300 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<ol class="breadcrumb mb-4 mt-4">
+    <li class="breadcrumb-item"><a href="index.html">Resumen</a></li>
+    <li class="breadcrumb-item">Usuarios</li>
+</ol>
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-users me-1"></i> Lista de Usuarios
+    </div>
+
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-success" onclick="abrirModal()">Agregar nuevo</button>
+            </div>
+        </div>
+        <hr />
+
+        <table id="tabla" class="  table is-striped is-hoverable" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Activo</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <input id="txtId" type="hidden"  />
+
+                <div class="row g-2">
+
+                    <div class="col-sm-12">
+                        <label for="txtNombre" class="form-label">Nombre</label>
+                        <input type="email" autocomplete="off" class="form-control" id="txtNombre">
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="txtApellido" class="form-label">Apellido</label>
+                        <input type="email" autocomplete="off" class="form-control" id="txtApellido">
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="txtCorreo" class="form-label">Correo</label>
+                        <input type="email" autocomplete="off" class="form-control" id="txtCorreo">
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="cboActivo" class="form-label">Activo</label>
+                        <select class="form-select" id="cboActivo">
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <div id="mensajeError" class="alert alert-danger" role="alert">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@section scripts{
+    <script>
+
+        var tablaData
+        var filaSeleccionada
+
+        tablaData = $("#tabla").DataTable({
+
+            responsive: true,
+            ordering: false,
+            "ajax": {
+
+                url: '@Url.Action("ListarUsuarios", "Home")',
+                type: "GET",
+                dataType: "json",
+            },
+            "columns": [
+                { "data": "Nombre" },
+                { "data": "Apellido" },
+                { "data": "Correo" },
+                {
+                    "data": "Activo", "render": function (valor) {
+                        if (valor) {
+                            return '<span class="badge bg-success"> SI</span>'
+                        }
+                        else {
+                            return '<span class="badge bg-danger"> NO</span>'
+                        }
+                    }
+                },
+                {
+                    "defaultContent": '<button type ="button" class = "btn btn-primary btn-sm btn-editar"> <i class="fas fa-pen"> </i> </button>' +
+                                      '<button type ="button" class = "btn btn-danger  btn-sm ms-2 btn-eliminar"> <i class="fas fa-trash"> </i> </button>',
+                    "orderable": false,
+                    "serchable": false,
+                }
+            ],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/2.0.2/i18n/es-ES.json"
+            }
+        });
+
+        function abrirModal(json) {
+
+            $("#txtNombre, #txtApellido, #txtCorreo").val("");
+            $("#cboActivo").val(1);
+            $("#txtId").val("");
+
+            $("#mensajeError").hide();
+
+            if (json != null) {
+
+                $("#txtId").val(json.IdUsuario);
+                $("#txtNombre").val(json.Nombre)
+                $("#txtApellido").val(json.Apellido)
+                $("#txtCorreo").val(json.Correo)
+                $("#cboActivo").val(json.Activo == true ? 1 : 0);
+            }
+
+            $("#formModal").modal("show");
+        }
+
+        $("#tabla tbody").on("click", '.btn-editar', function () {
+
+            filaSeleccionada = $(this).closest("tr");
+            var data = tablaData.row(filaSeleccionada).data();
+
+            abrirModal(data);
+        })
+
+        $("#tabla tbody").on("click", '.btn-eliminar', function () {
+
+            var usuarioSeleccionado = $(this).closest("tr");
+            var data = tablaData.row(usuarioSeleccionado).data();
+            console.log(data)
+            Swal.fire({
+                title: "¿Estas seguro?",
+                text: "¿Desea eliminar usuario?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                cancelButtonText: "Cancelar",
+                confirmButtonText: "Eliminar",
+
+            })
+
+                .then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Eliminado!",
+                        text: "Usuario eliminado",
+                        icon: "success",
+
+                    });
+                    jQuery.ajax({
+                        url: '@Url.Action("eliminarUsuario", "Home")',
+                        type: "POST",
+                        data: JSON.stringify({ id: data.IdUsuario }),
+                        dataType: "json",
+                        contentType: "application/json: charset=utf-8",
+
+                        success: function (data) {
+                            if (data.resultado) {
+                                tablaData.row(usuarioSeleccionado).remove().draw()
+                            }
+                            else {
+                                Swal.fire("No se pudo eliminar el usuario.", data.mensaje, "error")
+                            }
+
+                         }
+
+                    })
+
+                }
+
+            });
+
+        })
+
+
+
+        function Guardar() {
+
+          
+            var Usuario = {
+                IdUsuario: $("#txtId").val(),
+                Activo: $("#cboActivo").val() == 1 ? true : false,
+                Nombre: $("#txtNombre").val(),
+                Apellido: $("#txtApellido").val(),
+                Correo: $("#txtCorreo").val()
+            }
+
+            jQuery.ajax({
+                
+                url: '@Url.Action("guardarUsuario", "Home")',
+                type: "POST",
+                data: JSON.stringify({ usuario: Usuario }),
+                dataType: "json",
+                contentType: "application/json: charset=utf-8",
+                success: function (data) {
+
+                    $(".modal-body").LoadingOverlay("hide");
+                    //Nuevo usuario
+                    if (Usuario.IdUsuario == 0) {
+
+                        if (data.resultado != 0) {
+                            Usuario.IdUsuario = data.resultado
+                            tablaData.row.add(Usuario).draw(false)
+                            $("#formModal").modal("hide");
+                            tablaData.ajax.reload();
+
+                        }
+                        else {
+                            $("#mensajeError").text(data.mensaje);
+                            $("#mensajeError").show();
+
+
+                        }
+                    }
+                    //Editar usuario
+                    else {
+                        if (data.resultado) {
+                            tablaData.row(filaSeleccionada).data(Usuario).draw(false);
+                            filaSeleccionada = null
+                            $("#formModal").modal("hide");
+                            tablaData.ajax.reload();
+                        }
+                        else {
+                            $("#mensajeError").text(data.mensaje);
+                            $("#mensajeError").show();
+                        }
+                    }
+                },
+                error: function (error) {
+                    $(".modal-body").LoadingOverlay("hide");
+                    $("#mensajeError").text("Error ajax");
+                    $("#mensajeError").show();
+                },
+
+                beforeSend: function () {
+
+                    $(".modal-body").LoadingOverlay("show", {
+                        imageResizeFactor: 2,
+                        text: "cargando...",
+                        size: 14
+                    });
+
+
+                }
+            })
+
+
+
+        }
+
+
+    </script>
+
+}
