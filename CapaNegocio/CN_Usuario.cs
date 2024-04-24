@@ -103,7 +103,7 @@ namespace CapaNegocio
 
 
 
-        public bool cambiarClaveint(int idUsuario, string nuevaClave, out string mensaje)
+        public bool cambiarClave(int idUsuario, string nuevaClave, out string mensaje)
         {
             return objCapaDato.cambiarClave(idUsuario, nuevaClave, out mensaje);
         }
