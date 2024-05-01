@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CapaDatos
@@ -152,6 +154,47 @@ namespace CapaDatos
             return resultado;
         }
 
+
+        public List<Marca> listarMarcaCategoria(int idcategoria )
+        {
+            List<Marca> lista = new List<Marca>();
+            Conexion datos = new Conexion();
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("select distinct m.IdMarca, m.Descripcion from PRODUCTO p");
+            sb.AppendLine("inner join categoria c on c.IdCategoria = p.IdCategoria");
+            sb.AppendLine("inner join marca m on m.IdMarca = p.IdMarca and m.Activo = 1");
+            sb.AppendLine("where c.IdCategoria = iif(@idcategoria = 0, c.IdCategoria, @idcategoria)");
+
+            try
+            {
+                datos.setearConsulta(sb.ToString());
+                datos.setearParametro("@idcategoria", idcategoria);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Marca aux = new Marca();
+
+                    aux.IdMarca = (int)datos.Lector["IdMarca"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al listar categorias: " + ex.Message);
+                return new List<Marca>();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
 
     }

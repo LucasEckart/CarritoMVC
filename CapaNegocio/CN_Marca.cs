@@ -63,7 +63,10 @@ namespace CapaNegocio
             return objCapaDato.eliminarMarca(id, out Mensaje);
         }
 
-
+        public List<Marca> listarMarcaCategoria(int idcategoria)
+        {
+            return objCapaDato.listarMarcaCategoria(idcategoria);
+        }
 
     }
 }

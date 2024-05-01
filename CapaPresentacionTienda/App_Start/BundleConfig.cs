@@ -20,9 +20,18 @@ namespace CapaPresentacionTienda
             //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.bundle.js"));
+                      "~/Scripts/bootstrap.bundle.js",
+                      "~/Scripts/fontawesome/all.min.js",
+                      "~/Scripts/loadingoverlay.min.js",
+                      "~/Scripts/sweetalert2/sweetalert2.min.js"
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+                      ));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/site.css",
+                "~/Content/sweetalert2.min.css"
+
+                ));
         }
     }
 }

@@ -58,7 +58,7 @@ namespace CapaDatos
 
                 return lista;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return new List<Producto>();
             }

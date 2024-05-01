@@ -165,8 +165,10 @@ namespace CapaPresentacionTienda.Controllers
 
         public ActionResult CerrarSession(string correo)
         {
+            Session["Cliente"] = null;
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Acceso");
+            
         }
     }
 }
