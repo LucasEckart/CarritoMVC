@@ -30,6 +30,16 @@ namespace CapaNegocio
             return objCapaDato.cantidadCarrito(IdCliente);
         }
 
+        public List<Carrito> listarProducto(int IdCliente)
+        {
+            return objCapaDato.listarProducto(IdCliente);
+        }
+
+        public bool eliminarCarrito(int IdCliente, int IdProducto)
+        {
+            return objCapaDato.eliminarCarrito(IdCliente, IdProducto);
+
+        }
 
 
     }

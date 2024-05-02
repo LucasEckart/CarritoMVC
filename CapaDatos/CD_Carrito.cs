@@ -10,7 +10,7 @@ using System.Diagnostics.Contracts;
 using CapaEntidad;
 using System.Xml;
 using System.Collections;
-
+using System.Globalization;
 
 namespace CapaDatos
 {
@@ -26,7 +26,7 @@ namespace CapaDatos
                 datos.setearPorcedimiento("sp_existeCarrito");
 
                 datos.setearParametro("IdCliente", IdCliente);
-                datos.setearParametro("IdProducto", IdProducto);;
+                datos.setearParametro("IdProducto", IdProducto); ;
 
                 datos.setearParametroScalar("@Resultado", null, SqlDbType.Int, ParameterDirection.Output);
                 datos.ejecutarAccion();
@@ -112,6 +112,80 @@ namespace CapaDatos
 
 
 
+        public List<Carrito> listarProducto(int IdCliente)
+        {
+            List<Carrito> lista = new List<Carrito>();
+            Conexion datos = new Conexion();
+            CultureInfo cultureInfo = new CultureInfo("es-AR");
+
+            try
+            {
+                string consulta = "select * from fn_obtenerCarritoCliente(@IdCliente)";
+
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@IdCliente", IdCliente);
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    lista.Add(new Carrito()
+                    {
+                        Producto = new Producto()
+                        {
+
+                            IdProducto = (int)datos.Lector["IdProducto"],
+                            Nombre = (string)datos.Lector["Nombre"],
+                            Precio = decimal.Parse(datos.Lector["Precio"].ToString(), cultureInfo),
+                            RutaImagen = datos.Lector["RutaImagen"] != DBNull.Value ? (string)datos.Lector["RutaImagen"] : "",
+                            NombreImagen = datos.Lector["NombreImagen"] != DBNull.Value ? (string)datos.Lector["NombreImagen"] : "",
+                            IdMarca = new Marca() { Descripcion = (string)datos.Lector["DesMarca"] }
+                        },
+                        Cantidad = (int)datos.Lector["Cantidad"],
+                    });
+                }
+                return lista;
+            }
+            catch (Exception)
+            {
+                return new List<Carrito>();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
+        public bool eliminarCarrito(int IdCliente, int IdProducto)
+        {
+            Conexion datos = new Conexion();
+            bool resultado = true;
+
+            try
+            {
+                datos.setearPorcedimiento("sp_eliminarCarrito");
+
+                datos.setearParametro("IdCliente", IdCliente);
+                datos.setearParametro("IdProducto", IdProducto); ;
+
+                datos.setearParametroScalar("@Resultado", null, SqlDbType.Int, ParameterDirection.Output);
+                datos.ejecutarAccion();
+
+                resultado = Convert.ToBoolean(datos.getearParametro("@Resultado").Value);
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return resultado;
+        }
 
 
 
