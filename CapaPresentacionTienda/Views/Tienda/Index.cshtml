@@ -267,6 +267,41 @@
         })
 
 
+        $(document).on("click", "button.agregarCarrito", function () {
+
+
+            jQuery.ajax({
+                url : "@Url.Action("agregarCarrito", "Tienda")",
+                type: "POST",
+                data: JSON.stringify({ IdProducto: $(this).data("idProducto") }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                    if (data.respuesta) {
+                        mostrarCantCarrito();
+
+                        Swal.fire({
+                            title: "Agregado al carrito",
+                            text: "¿Desea ir al carrito?",
+                            icon: "success",
+                            showCancelButton: true,
+                            confirmButtonColor: "btn-primary",
+                            confirmButtonText: "Si",
+                            cancelButtonText: "No",
+                            closeOnConfirm: true
+                        }, function () {
+                            window.location.href = '@Url.Action("Carrito", "Tienda")'
+                        })
+                    } else {
+                        Swal.fire("", data.mensaje, "warning")
+
+                      
+                    }
+                }
+                })
+        })
+
 
 
 

@@ -25,10 +25,10 @@ namespace CapaDatos
             {
                 datos.setearPorcedimiento("sp_existeCarrito");
 
-                datos.setearParametro("@IdCliente", IdCliente);
-                datos.setearParametro("@IdProducto", IdProducto);;
+                datos.setearParametro("IdCliente", IdCliente);
+                datos.setearParametro("IdProducto", IdProducto);;
 
-                datos.setearParametro("@Resultado", SqlDbType.Bit);
+                datos.setearParametroScalar("@Resultado", null, SqlDbType.Int, ParameterDirection.Output);
                 datos.ejecutarAccion();
 
                 resultado = Convert.ToBoolean(datos.getearParametro("@Resultado").Value);
@@ -65,8 +65,8 @@ namespace CapaDatos
                 datos.setearParametro("sumar", sumar);
 
 
-                datos.setearParametro("@Resultado", SqlDbType.Bit);
-                datos.setearParametro("@Mensaje", SqlDbType.VarChar);
+                datos.setearParametroScalar("@Resultado", null, SqlDbType.Int, ParameterDirection.Output);
+                datos.setearParametroScalar("@Mensaje", null, SqlDbType.VarChar, ParameterDirection.Output, 500);
 
                 datos.ejecutarAccion();
 

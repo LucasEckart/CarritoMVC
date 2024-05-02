@@ -1,5 +1,5 @@
 ﻿@model CapaEntidad.Producto
-@{ 
+@{
     ViewBag.Title = "detalleProducto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -22,7 +22,7 @@
 
                     @if (Session["Cliente"] != null)
                     {
-                        <button class="btn btn-success agregarcarrito flex-shrink-0 w-50" type="button" data-idproducto="@Html.DisplayTextFor(m => m.IdProducto)">
+                        <button class="btn btn-success agregarCarrito flex-shrink-0 w-50" type="button" data-idproducto="@Html.DisplayTextFor(m => m.IdProducto)">
                             <i class="fas fa-cart-plus"></i>
                             Agregar al Carrito
                         </button>
@@ -34,3 +34,50 @@
         </div>
     </div>
 </section>
+
+@section scripts{
+
+    <script>
+
+
+
+        $(document).on("click", "button.agregarCarrito", function () {
+
+
+            jQuery.ajax({
+                url : "@Url.Action("agregarCarrito", "Tienda")",
+                type: "POST",
+                data: JSON.stringify({ IdProducto: $(this).data("idproducto") }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                    if (data.respuesta) {
+                        mostrarCantCarrito();
+
+                        Swal.fire({
+                            title: "Agregado al carrito",
+                            text: "¿Desea ir al carrito?",
+                            icon: "success",
+                            showCancelButton: true,
+                            confirmButtonColor: "btn-primary",
+                            confirmButtonText: "Si",
+                            cancelButtonText: "No",
+                            closeOnConfirm: true
+                        }, function () {
+                            window.location.href = '@Url.Action("Carrito", "Tienda")'
+                        })
+                    } else {
+                        Swal.fire("", data.mensaje, "warning")
+
+
+                    }
+                }
+                })
+        })
+
+
+
+    </script>
+
+}

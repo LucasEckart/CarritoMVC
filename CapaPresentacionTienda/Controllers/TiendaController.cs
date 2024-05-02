@@ -75,7 +75,7 @@ namespace CapaPresentacionTienda.Controllers
                 Activo = p.Activo,
             }).Where(p => p.IdCategoria.IdCategoria == (idcategoria == 0 ? p.IdCategoria.IdCategoria : idcategoria) &&
             p.IdMarca.IdMarca == (idmarca == 0 ? p.IdMarca.IdMarca : idmarca) &&
-            p.Stock > 0 && p.Activo == true).ToList();
+            p.Stock >= 0 && p.Activo == true).ToList();
 
             var jsonresult = Json(new { data = lista }, JsonRequestBehavior.AllowGet);
             jsonresult.MaxJsonLength = int.MaxValue;

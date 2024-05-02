@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class CN_Carrito
     {
-        private CN_Carrito objCapaDato = new CN_Carrito();
+        private CD_Carrito objCapaDato = new CD_Carrito();
 
         public bool existeCarrito(int IdCliente, int IdProducto)
         {
