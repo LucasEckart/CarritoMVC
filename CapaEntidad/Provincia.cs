@@ -9,7 +9,7 @@ namespace CapaEntidad
     public class Provincia
     {
 
-        public int IdProvincia { get; set; }
-        public string Descipcion { get; set; }
+        public string IdProvincia { get; set; }
+        public string Descripcion { get; set; }
     }
 }

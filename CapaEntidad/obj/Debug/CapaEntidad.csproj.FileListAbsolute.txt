@@ -10,3 +10,9 @@ C:\Users\Lucrecio\Documents\lucas\.net\Fundamentos mvc\CarritoMVCgithub\CarritoM
 C:\Users\Lucrecio\Documents\lucas\.net\Fundamentos mvc\CarritoMVCgithub\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\Lucrecio\Documents\lucas\.net\Fundamentos mvc\CarritoMVCgithub\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\Lucrecio\Documents\lucas\.net\Fundamentos mvc\CarritoMVCgithub\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Usuario\Documents\lucas\carritoMVC\CarritoMVC\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Usuario\Documents\lucas\carritoMVC\CarritoMVC\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Usuario\Documents\lucas\carritoMVC\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\lucas\carritoMVC\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\lucas\carritoMVC\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Usuario\Documents\lucas\carritoMVC\CarritoMVC\CapaEntidad\obj\Debug\CapaEntidad.pdb

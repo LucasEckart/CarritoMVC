@@ -10,7 +10,7 @@ namespace CapaEntidad
     {
 
 
-        public int IdPartido { get; set; }
+        public string IdPartido { get; set; }
         public string Descripcion { get; set; }
         public string IdProvincia { get; set; }
     }

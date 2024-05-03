@@ -81,8 +81,9 @@ namespace CapaPresentacionTienda.Controllers
             jsonresult.MaxJsonLength = int.MaxValue;
 
             return jsonresult;
-
         }
+
+
 
         [HttpPost]
         public JsonResult agregarCarrito(int IdProducto)
@@ -118,7 +119,7 @@ namespace CapaPresentacionTienda.Controllers
 
 
         [HttpPost]
-        public JsonResult listarProducto()
+        public JsonResult listarProductoCarrito()
         {
             int IdCliente = ((Cliente)Session["Cliente"]).IdCliente;
             List<Carrito> lista = new List<Carrito>();
@@ -171,6 +172,32 @@ namespace CapaPresentacionTienda.Controllers
             respuesta = new CN_Carrito().eliminarCarrito(IdCliente, IdProducto);
 
             return Json(new { respuesta = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public JsonResult obtenerProvincia()
+        {
+            List<Provincia> lista = new List<Provincia>();
+
+            lista = new CN_Ubicacion().obtenerProvincia();
+
+            return Json(new { lista = lista}, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult obtenerPartido(string idProvincia)
+        {
+            List<Partido> lista = new List<Partido>();
+
+            lista = new CN_Ubicacion().obtenerPartido(idProvincia);
+
+            return Json(new { lista = lista }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult carrito()
+        {
+            return View();
         }
     }
 }
