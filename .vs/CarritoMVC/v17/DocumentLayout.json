@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capapresentaciontienda\\views\\tienda\\carrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\carrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capaentidad\\provincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\provincia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capanegocio\\cn_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capanegocio\\cn_ubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_ubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D0A3E22-2F1D-41B2-B74F-065E5DA432A2}|CapaDatos\\CapaDatos.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capadatos\\cd_ubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D0A3E22-2F1D-41B2-B74F-065E5DA432A2}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_ubicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capanegocio\\cn_marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_marca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D0A3E22-2F1D-41B2-B74F-065E5DA432A2}|CapaDatos\\CapaDatos.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capadatos\\cd_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D0A3E22-2F1D-41B2-B74F-065E5DA432A2}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,14 +31,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "carrito.cshtml",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
-              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
-              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAkwC4AAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-03T02:24:43.467Z",
+              "Title": "Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaEntidad\\Venta.cs",
+              "RelativeDocumentMoniker": "CapaEntidad\\Venta.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaEntidad\\Venta.cs",
+              "RelativeToolTip": "CapaEntidad\\Venta.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T06:11:38.358Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -57,61 +50,35 @@
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
               "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
-              "ViewState": "AQIAALQAAAAAAAAAAAAmwMcAAAAaAAAA",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAxwNEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T02:18:23.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CN_Marca.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Marca.cs",
-              "RelativeDocumentMoniker": "CapaNegocio\\CN_Marca.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Marca.cs",
-              "RelativeToolTip": "CapaNegocio\\CN_Marca.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T02:15:52.252Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CN_Ubicacion.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Ubicacion.cs",
-              "RelativeDocumentMoniker": "CapaNegocio\\CN_Ubicacion.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Ubicacion.cs",
-              "RelativeToolTip": "CapaNegocio\\CN_Ubicacion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T02:15:33.021Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CD_Ubicacion.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaDatos\\CD_Ubicacion.cs",
-              "RelativeDocumentMoniker": "CapaDatos\\CD_Ubicacion.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaDatos\\CD_Ubicacion.cs",
-              "RelativeToolTip": "CapaDatos\\CD_Ubicacion.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAIwDIAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T01:54:55.847Z",
+              "WhenOpened": "2024-05-04T06:21:19.237Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Provincia.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaEntidad\\Provincia.cs",
-              "RelativeDocumentMoniker": "CapaEntidad\\Provincia.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaEntidad\\Provincia.cs",
-              "RelativeToolTip": "CapaEntidad\\Provincia.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "Title": "CN_Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Venta.cs",
+              "RelativeDocumentMoniker": "CapaNegocio\\CN_Venta.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Venta.cs",
+              "RelativeToolTip": "CapaNegocio\\CN_Venta.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-03T02:02:46.975Z",
+              "WhenOpened": "2024-05-04T06:18:17.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CD_Venta.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaDatos\\CD_Venta.cs",
+              "RelativeDocumentMoniker": "CapaDatos\\CD_Venta.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaDatos\\CD_Venta.cs",
+              "RelativeToolTip": "CapaDatos\\CD_Venta.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAgwBEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T06:09:40.952Z",
               "EditorCaption": ""
             }
           ]

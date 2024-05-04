@@ -7,6 +7,10 @@ using CapaEntidad;
 using CapaNegocio;
 using System.IO;
 using System.Web.Services.Description;
+using System.Threading.Tasks;
+using System.Data;
+using System.Globalization;
+using System.Collections;
 
 namespace CapaPresentacionTienda.Controllers
 {
@@ -154,7 +158,7 @@ namespace CapaPresentacionTienda.Controllers
 
             string mensaje = string.Empty;
 
-            respuesta = new CN_Carrito().operacionCarrito(IdCliente, IdProducto, true, out mensaje);
+            respuesta = new CN_Carrito().operacionCarrito(IdCliente, IdProducto, sumar, out mensaje);
 
             return Json(new { respuesta = respuesta, mensaje = mensaje }, JsonRequestBehavior.AllowGet);
         }
@@ -199,6 +203,42 @@ namespace CapaPresentacionTienda.Controllers
         {
             return View();
         }
+
+
+        [HttpPost]
+        public async Task<JsonResult> procesarPago(List<Carrito> listaCarrito, Venta venta)
+        {
+            decimal total = 0;
+            DataTable detalleVenta = new DataTable();
+            detalleVenta.Locale = new CultureInfo("es-AR");
+            detalleVenta.Columns.Add("IdProducto", typeof(string));
+            detalleVenta.Columns.Add("Cantidad", typeof(int));
+            detalleVenta.Columns.Add("Total", typeof(decimal));
+
+            foreach (Carrito carrito in listaCarrito) 
+            {
+                decimal subTotal = Convert.ToDecimal(carrito.Cantidad.ToString()) * carrito.Producto.Precio;
+
+                total += subTotal;
+
+                detalleVenta.Rows.Add(new object[]
+                {
+                    carrito.Producto.IdProducto,
+                    carrito.Cantidad,
+                    subTotal
+                });
+            }
+                
+            venta.MontoTotal = total;   
+            venta.IdCliente = ((Cliente)Session["Cliente"]).IdCliente;
+
+            TempData["Venta"] = venta;
+            TempData["detalleVenta"] = detalleVenta;
+
+            return Json(new { Status = true, link = "/Tienda/Pagoefectuado?IdTransaccion=code0001&status=true"}, JsonRequestBehavior.AllowGet);
+
+        }
+
     }
 }
 

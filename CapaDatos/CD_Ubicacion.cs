@@ -48,7 +48,7 @@ namespace CapaDatos
         }
 
 
-        public List<Partido> obtenerPartido(string idDepartamento)
+        public List<Partido> obtenerPartido(string IdProvincia)
         {
             List<Partido> lista = new List<Partido>();
             Conexion datos = new Conexion();
@@ -56,15 +56,16 @@ namespace CapaDatos
             try
             {
                 datos.setearConsulta("select * from PARTIDO where IdProvincia = @IdProvincia");
-                datos.setearParametro("@IdProvincia", idDepartamento);
+                datos.setearParametro("@IdProvincia", IdProvincia);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Partido aux = new Partido();
 
-                    aux.IdPartido = (string)datos.Lector["IdProvincia"];
-                    aux.Descripcion = (string)datos.Lector["Descipcion"];
+                    aux.IdPartido = (string)datos.Lector["IdPartido"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.IdProvincia = (string)datos.Lector["IdProvincia"];
 
                     lista.Add(aux);
                 }
