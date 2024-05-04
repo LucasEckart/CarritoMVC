@@ -28,7 +28,7 @@ namespace CapaDatos
                 datos.setearParametro("IdCliente", venta.IdCliente);
                 datos.setearParametro("TotalProducto", venta.TotalProducto);
                 datos.setearParametro("MontoTotal", venta.MontoTotal);
-                datos.setearParametro("Contacto", venta.contacto);
+                datos.setearParametro("Contacto", venta.Contacto);
                 datos.setearParametro("IdPartido", venta.IdPartido);
                 datos.setearParametro("Telefono", venta.Telefono);
                 datos.setearParametro("Direccion", venta.Direccion);

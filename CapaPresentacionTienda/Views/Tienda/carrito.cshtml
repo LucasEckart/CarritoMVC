@@ -430,13 +430,71 @@
 
                 })
 
-            
+
 
          })
 
 
 
+        function realizarPago() {
 
+            if (parseInt($("#cantidadcarrito").text()) == 0) {
+
+                Swal.fire("", "No hay productos en el carrito.", "warning")
+                return
+            }
+
+            if ($("#cboPartido").val() == null || $("#txtNombreContacto").val() == "" || $("#txtDireccion").val() == "" || $("#txtTelefono").val() == "" ) {
+
+                Swal.fire("", "Completar los datos del detalle del envio.", "warning")
+                return
+            }
+
+            var venta = {
+                TotalProducto: $("input.input-cantidad"),
+                MontoTotal: 0,
+                Contacto: $("#txtNombreContacto").val(),
+                IdPartido: $("#cboPartido").val(),
+                Telefono: $("#txtTelefono").val(),
+                Direccion: $("#txtDireccion").val()
+            }
+
+            var listaCarrito = [];
+
+            $("input.input-cantidad").each(function () {
+
+                var producto = $(this).data("Producto");
+                var cantidad = parseFloat($(this).val())
+
+                listaCarrito.push({
+                    Producto: producto,
+                    Cantidad: cantidad
+                })
+            })
+
+            jQuery.ajax({
+                url: "@Url.Action("procesarPago", "Tienda")",
+                type: "POST",
+                data: JSON.stringify({ listaCarrito: listaCarrito, Venta: venta }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+
+                    $.LoadingOverlay("hide")
+
+                    if (data.Status) {
+                        window.location.href = data.Link;
+                    }
+                    else {
+                        Swal.fire("", "Vuelva a intentarlo mas tarde ", "warning")
+                    }
+                },
+                beforeSend: function () { $.LoadingOverlay("show") },
+                error: function (error) { LoadingOverlay("hide")}
+
+            })
+
+        }
 
 
 

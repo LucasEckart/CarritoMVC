@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capanegocio\\cn_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1F2793C-C6D9-4D40-854A-4A081FA9FC63}|CapaNegocio\\CapaNegocio.csproj|solutionrelative:capanegocio\\cn_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capapresentaciontienda\\views\\tienda\\pagoefectuado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\pagoefectuado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D0A3E22-2F1D-41B2-B74F-065E5DA432A2}|CapaDatos\\CapaDatos.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capadatos\\cd_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D0A3E22-2F1D-41B2-B74F-065E5DA432A2}|CapaDatos\\CapaDatos.csproj|solutionrelative:capadatos\\cd_venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capapresentaciontienda\\views\\tienda\\carrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BD1B1902-4DFF-4590-8D3F-1BDBF266D386}|CapaPresentacionTienda\\CapaPresentacionTienda.csproj|solutionrelative:capapresentaciontienda\\views\\tienda\\carrito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|c:\\users\\usuario\\documents\\lucas\\carritomvc\\carritomvc\\capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07B3E4F7-2B0A-4C00-9C05-A51022A3BA3A}|CapaEntidad\\CapaEntidad.csproj|solutionrelative:capaentidad\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Venta.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaEntidad\\Venta.cs",
               "RelativeDocumentMoniker": "CapaEntidad\\Venta.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaEntidad\\Venta.cs",
               "RelativeToolTip": "CapaEntidad\\Venta.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAfAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-04T06:11:38.358Z",
               "IsPinned": true,
@@ -44,41 +44,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "carrito.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
+              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\carrito.cshtml",
+              "ViewState": "AQIAAMkBAAAAAAAAAAAAwMkBAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-04T17:40:45.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "TiendaController.cs",
               "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
               "RelativeDocumentMoniker": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
               "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Controllers\\TiendaController.cs",
               "RelativeToolTip": "CapaPresentacionTienda\\Controllers\\TiendaController.cs",
-              "ViewState": "AQIAAMkAAAAAAAAAAAAxwNEAAAAJAAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAuwD8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-04T06:21:19.237Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CN_Venta.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Venta.cs",
-              "RelativeDocumentMoniker": "CapaNegocio\\CN_Venta.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaNegocio\\CN_Venta.cs",
-              "RelativeToolTip": "CapaNegocio\\CN_Venta.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T06:18:17.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CD_Venta.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaDatos\\CD_Venta.cs",
-              "RelativeDocumentMoniker": "CapaDatos\\CD_Venta.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaDatos\\CD_Venta.cs",
-              "RelativeToolTip": "CapaDatos\\CD_Venta.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAgwBEAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T06:09:40.952Z",
+              "DocumentIndex": 1,
+              "Title": "PagoEfectuado.cshtml",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Views\\Tienda\\PagoEfectuado.cshtml",
+              "RelativeDocumentMoniker": "CapaPresentacionTienda\\Views\\Tienda\\PagoEfectuado.cshtml",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\lucas\\carritoMVC\\CarritoMVC\\CapaPresentacionTienda\\Views\\Tienda\\PagoEfectuado.cshtml",
+              "RelativeToolTip": "CapaPresentacionTienda\\Views\\Tienda\\PagoEfectuado.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-04T17:30:39.577Z",
               "EditorCaption": ""
             }
           ]

@@ -138,13 +138,13 @@ namespace CapaPresentacionTienda.Controllers
                     IdMarca = c.Producto.IdMarca,
                     Precio = c.Producto.Precio,
                     RutaImagen = c.Producto.RutaImagen,
-                    Base64 = CN_Recursos.convertirBase64(Path.Combine(c.Producto.RutaImagen, c.Producto.NombreImagen), out conversion ),
+                    Base64 = CN_Recursos.convertirBase64(Path.Combine(c.Producto.RutaImagen, c.Producto.NombreImagen), out conversion),
                     Extension = Path.GetExtension(c.Producto.NombreImagen)
                 },
                 Cantidad = c.Cantidad
             }).ToList();
 
-            return Json(new { data = lista}, JsonRequestBehavior.AllowGet);
+            return Json(new { data = lista }, JsonRequestBehavior.AllowGet);
 
         }
 
@@ -186,7 +186,7 @@ namespace CapaPresentacionTienda.Controllers
 
             lista = new CN_Ubicacion().obtenerProvincia();
 
-            return Json(new { lista = lista}, JsonRequestBehavior.AllowGet);
+            return Json(new { lista = lista }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -215,7 +215,7 @@ namespace CapaPresentacionTienda.Controllers
             detalleVenta.Columns.Add("Cantidad", typeof(int));
             detalleVenta.Columns.Add("Total", typeof(decimal));
 
-            foreach (Carrito carrito in listaCarrito) 
+            foreach (Carrito carrito in listaCarrito)
             {
                 decimal subTotal = Convert.ToDecimal(carrito.Cantidad.ToString()) * carrito.Producto.Precio;
 
@@ -228,14 +228,38 @@ namespace CapaPresentacionTienda.Controllers
                     subTotal
                 });
             }
-                
-            venta.MontoTotal = total;   
+
+            venta.MontoTotal = total;
             venta.IdCliente = ((Cliente)Session["Cliente"]).IdCliente;
 
             TempData["Venta"] = venta;
             TempData["detalleVenta"] = detalleVenta;
 
-            return Json(new { Status = true, link = "/Tienda/Pagoefectuado?IdTransaccion=code0001&status=true"}, JsonRequestBehavior.AllowGet);
+            return Json(new { Status = true, Link = "/Tienda/PagoEfectuado?IdTransaccion=code0001&status=true" }, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public async Task<ActionResult> PagoEfectuado()
+        {
+            string IdTransaccion = Request.QueryString["IdTransaccion"];
+            bool status = Convert.ToBoolean(Request.QueryString["status"]);
+
+            ViewData["Status"] = status;
+
+            if (status)
+            {
+                Venta venta = (Venta)TempData["Venta"];
+                DataTable detalleVenta = (DataTable)TempData["detalleVenta"];
+                venta.IdTransaccion = IdTransaccion;
+                string mensaje = string.Empty;
+
+                bool respuesta = new CN_Venta().registrar(venta, detalleVenta, out mensaje);
+
+                ViewData["IdTransaccion"] = venta.IdTransaccion;    
+
+            }
+
+            return View();
 
         }
 
