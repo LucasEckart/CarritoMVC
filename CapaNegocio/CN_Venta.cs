@@ -19,6 +19,12 @@ namespace CapaNegocio
             return objCapaDato.registrar(venta, detalleVenta, out Mensaje);
         }
 
+        public List<DetalleVenta> listarCompras(int IdCliente)
+        {
+            return objCapaDato.listarCompras(IdCliente);
+        }
+
+
 
     }
 }

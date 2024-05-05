@@ -10,6 +10,7 @@ using System.Diagnostics.Contracts;
 using CapaEntidad;
 using System.Xml;
 using System.Collections;
+using System.Globalization;
 namespace CapaDatos
 {
     public class CD_Venta
@@ -55,6 +56,55 @@ namespace CapaDatos
             }
             return respuesta;
         }
+
+
+
+        public List<DetalleVenta> listarCompras(int IdCliente)
+        {
+            List<DetalleVenta> lista = new List<DetalleVenta>();
+            Conexion datos = new Conexion();
+            CultureInfo cultureInfo = new CultureInfo("es-AR");
+
+            try
+            {
+                string consulta = "select * from fn_listarCompra(@IdCliente)";
+
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@IdCliente", IdCliente);
+
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    lista.Add(new DetalleVenta()
+                    {
+                        IdProducto = new Producto()
+                        {
+
+                            Nombre = (string)datos.Lector["Nombre"],
+                            Precio = decimal.Parse(datos.Lector["Precio"].ToString(), cultureInfo),
+                            RutaImagen = datos.Lector["RutaImagen"] != DBNull.Value ? (string)datos.Lector["RutaImagen"] : "",
+                            NombreImagen = datos.Lector["NombreImagen"] != DBNull.Value ? (string)datos.Lector["NombreImagen"] : "",
+                        },
+                        Cantidad = (int)datos.Lector["Cantidad"],
+                        Total = decimal.Parse(datos.Lector["Total"].ToString(), cultureInfo),
+                        IdTransaccion = (string)datos.Lector["IdTransaccion"]
+
+                }); 
+                }
+                return lista;
+            }
+            catch (Exception)
+            {
+                return new List<DetalleVenta>();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
 
 
 

@@ -12,6 +12,8 @@ using System.Data;
 using System.Globalization;
 using System.Collections;
 using CapaEntidad.Paypal;
+using System.EnterpriseServices;
+using CapaPresentacionTienda.Filter;
 
 namespace CapaPresentacionTienda.Controllers
 {
@@ -200,6 +202,9 @@ namespace CapaPresentacionTienda.Controllers
             return Json(new { lista = lista }, JsonRequestBehavior.AllowGet);
         }
 
+
+        [ValidarSession]
+        [Authorize]
         public ActionResult carrito()
         {
             return View();
@@ -295,6 +300,8 @@ namespace CapaPresentacionTienda.Controllers
 
         }
 
+        [ValidarSession]
+        [Authorize]
         public async Task<ActionResult> PagoEfectuado()
         {
             string token = Request.QueryString["token"];
@@ -318,6 +325,34 @@ namespace CapaPresentacionTienda.Controllers
             }
 
             return View();
+        }
+
+
+
+        [ValidarSession]
+        [Authorize]
+        public ActionResult misCompras()
+        {
+            int IdCliente = ((Cliente)Session["Cliente"]).IdCliente;
+            List<DetalleVenta> lista = new List<DetalleVenta>();
+            bool conversion;
+
+            lista = new CN_Venta().listarCompras(IdCliente).Select(c => new DetalleVenta()
+            {
+                IdProducto = new Producto()
+                {
+                    Nombre = c.IdProducto.Nombre,
+                    Precio = c.IdProducto.Precio,
+                    Base64 = CN_Recursos.convertirBase64(Path.Combine(c.IdProducto.RutaImagen, c.IdProducto.NombreImagen), out conversion),
+                    Extension = Path.GetExtension(c.IdProducto.NombreImagen)
+                },
+                Cantidad = c.Cantidad,
+                Total = c.Total,
+                IdTransaccion = c.IdTransaccion
+            }).ToList();
+
+            return View(lista);
+
         }
 
     }
