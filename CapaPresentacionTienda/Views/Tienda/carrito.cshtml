@@ -404,8 +404,6 @@
 
             var cardProducto = $(this).parents("div.card-producto")
 
-             console.log(IdProducto)
-
                 jQuery.ajax({
                     url: "@Url.Action("eliminarCarrito", "Tienda")",
                     type: "POST",
@@ -475,7 +473,7 @@
             jQuery.ajax({
                 url: "@Url.Action("procesarPago", "Tienda")",
                 type: "POST",
-                data: JSON.stringify({ listaCarrito: listaCarrito, Venta: venta }),
+                data: JSON.stringify({ listaCarrito: listaCarrito, venta: venta }),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
@@ -483,7 +481,13 @@
                     $.LoadingOverlay("hide")
 
                     if (data.Status) {
-                        window.location.href = data.Link;
+
+                        var jsonresult = data.Response;
+                        var links = jsonresult.links;
+                        var resultado = links.find(item => item.rel == "approve");
+                        window.location.href = resultado.href
+
+
                     }
                     else {
                         Swal.fire("", "Vuelva a intentarlo mas tarde ", "warning")
